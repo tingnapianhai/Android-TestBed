@@ -1,4 +1,4 @@
-package com.tingapianhai.android.testbed;
+package com.tingapianhai.android.testbed.dummy;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,22 +6,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.tingapianhai.android.testbed.ItemFragment.OnListFragmentInteractionListener;
+import com.tingapianhai.android.testbed.dummy.MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener;
+import com.tingapianhai.android.testbed.R;
 import com.tingapianhai.android.testbed.dummy.DummyContent.DummyItem;
 
 import java.util.List;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
+ * specified {@link MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
-    private final OnListFragmentInteractionListener mListener;
+    private final OnMyItemRecyclerViewListFragmentInteractionListener mListener;
 
-    public MyItemRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public MyItemRecyclerViewAdapter(List<DummyItem> items, OnMyItemRecyclerViewListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -45,7 +46,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    mListener.onMyItemRecyclerViewListFragmentInteraction(holder.mItem);
                 }
             }
         });

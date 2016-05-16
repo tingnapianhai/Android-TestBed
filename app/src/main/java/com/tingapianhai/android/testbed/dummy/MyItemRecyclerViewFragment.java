@@ -1,4 +1,4 @@
-package com.tingapianhai.android.testbed;
+package com.tingapianhai.android.testbed.dummy;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,36 +10,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tingapianhai.android.testbed.dummy.DummyContent;
+import com.tingapianhai.android.testbed.R;
 import com.tingapianhai.android.testbed.dummy.DummyContent.DummyItem;
-
-import java.util.List;
 
 /**
  * A fragment representing a list of Items.
  * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
+ * Activities containing this fragment MUST implement the {@link OnMyItemRecyclerViewListFragmentInteractionListener}
  * interface.
  */
-public class ItemFragment extends Fragment {
+public class MyItemRecyclerViewFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
-    private OnListFragmentInteractionListener mListener;
+    private OnMyItemRecyclerViewListFragmentInteractionListener mListener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ItemFragment() {
+    public MyItemRecyclerViewFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static ItemFragment newInstance(int columnCount) {
-        ItemFragment fragment = new ItemFragment();
+    public static MyItemRecyclerViewFragment newInstance(int columnCount) {
+        MyItemRecyclerViewFragment fragment = new MyItemRecyclerViewFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -78,11 +76,11 @@ public class ItemFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener) {
-            mListener = (OnListFragmentInteractionListener) context;
+        if (context instanceof OnMyItemRecyclerViewListFragmentInteractionListener) {
+            mListener = (OnMyItemRecyclerViewListFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
+                    + " must implement OnMyItemRecyclerViewListFragmentInteractionListener");
         }
     }
 
@@ -102,8 +100,8 @@ public class ItemFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnListFragmentInteractionListener {
+    public interface OnMyItemRecyclerViewListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onMyItemRecyclerViewListFragmentInteraction(DummyItem item);
     }
 }

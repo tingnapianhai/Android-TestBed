@@ -3,6 +3,8 @@ package com.tingapianhai.android.testbed;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.tingapianhai.android.testbed.dummy.DummyContent;
+import com.tingapianhai.android.testbed.dummy.MyItemRecyclerViewFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Fragment fragment = new MyItemRecyclerViewFragment();
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.layout_fragment, fragment).commit();
     }
 
     @Override
@@ -97,5 +107,16 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /// ***** Below is the interface-method definition for MyItemRecyclerViewFragment, for Fragment Communication
+
+    /**
+     * Implement
+     * @param item
+     */
+    @Override
+    public void onMyItemRecyclerViewListFragmentInteraction(DummyContent.DummyItem item) {
+        Toast.makeText(this, "" + item.id + " is clicked", Toast.LENGTH_SHORT).show();
     }
 }

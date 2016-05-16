@@ -1,4 +1,4 @@
-package com.tingapianhai.android.testbed.dummy;
+package com.tingapianhai.android.testbed.myitemrecyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.tingapianhai.android.testbed.dummy.MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener;
+import com.tingapianhai.android.testbed.myitemrecyclerview.MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener;
 import com.tingapianhai.android.testbed.R;
-import com.tingapianhai.android.testbed.dummy.DummyContent.DummyItem;
+import com.tingapianhai.android.testbed.myitemrecyclerview.DummyContent.DummyItem;
 
 import java.util.List;
 

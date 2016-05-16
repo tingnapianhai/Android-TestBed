@@ -1,4 +1,4 @@
-package com.tingapianhai.android.testbed.dummy;
+package com.tingapianhai.android.testbed.myitemrecyclerview;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tingapianhai.android.testbed.R;
-import com.tingapianhai.android.testbed.dummy.DummyContent.DummyItem;
+import com.tingapianhai.android.testbed.myitemrecyclerview.DummyContent.DummyItem;
 
 /**
  * A fragment representing a list of Items.

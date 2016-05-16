@@ -1,4 +1,4 @@
-package com.tingapianhai.android.testbed.dummy;
+package com.tingapianhai.android.testbed.myitemrecyclerview;
 
 import java.util.ArrayList;
 import java.util.HashMap;

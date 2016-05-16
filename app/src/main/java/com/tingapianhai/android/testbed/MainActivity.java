@@ -16,8 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.tingapianhai.android.testbed.dummy.DummyContent;
-import com.tingapianhai.android.testbed.dummy.MyItemRecyclerViewFragment;
+import com.tingapianhai.android.testbed.myitemrecyclerview.DummyContent;
+import com.tingapianhai.android.testbed.myitemrecyclerview.MyItemRecyclerViewFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener {

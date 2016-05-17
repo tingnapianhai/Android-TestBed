@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.tingapianhai.android.testbed.myitemrecyclerview.DummyContent;
 import com.tingapianhai.android.testbed.myitemrecyclerview.MyItemRecyclerViewFragment;
+import com.tingapianhai.android.testbed.myswiperefreshlayout.MySwipeRefreshLayoutFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener {
@@ -51,7 +52,12 @@ public class MainActivity extends AppCompatActivity
         /**
          * refers to com.tingapianhai.android.testbed.myitemrecyclerview
          */
-        startMyItemRecyclerViewListFragment();
+        //startMyItemRecyclerViewListFragment();
+
+        /**
+         * refers to com.tingapianhai.android.testbed.myswiperefreshlayout
+         */
+        startMySwipeRefreshLayoutFragment();
 
         // ********************** //
     }
@@ -129,4 +135,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     // ***** ***** ***** //
+    public void startMySwipeRefreshLayoutFragment(){
+        Fragment fragment = new MySwipeRefreshLayoutFragment();
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.layout_fragment, fragment).commit();
+    }
 }

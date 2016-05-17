@@ -47,9 +47,13 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Fragment fragment = new MyItemRecyclerViewFragment();
-        FragmentManager fragmentManager = this.getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.layout_fragment, fragment).commit();
+        // ********************** //
+        /**
+         * refers to com.tingapianhai.android.testbed.myitemrecyclerview
+         */
+        startMyItemRecyclerViewListFragment();
+
+        // ********************** //
     }
 
     @Override
@@ -109,14 +113,20 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    /// ***** Below is the interface-method definition for MyItemRecyclerViewFragment, for Fragment Communication
-
+    // ***** ***** ***** //
     /**
-     * Implement
+     * interface-method definition for MyItemRecyclerViewFragment, for Fragment Communication
      * @param item
      */
     @Override
     public void onMyItemRecyclerViewListFragmentInteraction(DummyContent.DummyItem item) {
         Toast.makeText(this, "" + item.id + " is clicked", Toast.LENGTH_SHORT).show();
     }
+    public void startMyItemRecyclerViewListFragment(){
+        Fragment fragment = new MyItemRecyclerViewFragment();
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.layout_fragment, fragment).commit();
+    }
+
+    // ***** ***** ***** //
 }

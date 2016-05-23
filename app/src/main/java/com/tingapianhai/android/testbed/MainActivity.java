@@ -1,5 +1,6 @@
 package com.tingapianhai.android.testbed;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.tingapianhai.android.testbed.actionbarmenuitem.MyActionBarActivity;
 import com.tingapianhai.android.testbed.myitemrecyclerview.DummyContent;
 import com.tingapianhai.android.testbed.myitemrecyclerview.MyItemRecyclerViewFragment;
 import com.tingapianhai.android.testbed.myswiperefreshlayout.MySwipeRefreshLayoutFragment;
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity
         /**
          * refers to com.tingapianhai.android.testbed.myswiperefreshlayout
          */
-        startMySwipeRefreshLayoutFragment();
+        //startMySwipeRefreshLayoutFragment();
 
         // ********************** //
     }
@@ -88,6 +90,13 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.action_openactivity) {
+            /**
+             * start MyActionBarActivity
+             */
+            this.startActivity(new Intent(this, MyActionBarActivity.class));
             return true;
         }
 

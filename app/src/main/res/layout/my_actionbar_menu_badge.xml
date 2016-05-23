@@ -8,7 +8,7 @@
 
     <!-- Menu Item Image -->
     <ImageView
-        android:id="@+id/menu_badge_image"
+        android:id="@+id/action_menu_badge_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -19,13 +19,13 @@
 
     <!-- Badge Count -->
     <TextView
-        android:id="@+id/actionbar_notifcation_textview"
+        android:id="@+id/actionbar_menu_badge_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
 
-        android:layout_alignTop="@id/menu_badge_image"
-        android:layout_alignRight="@id/menu_badge_image"
+        android:layout_alignTop="@id/action_menu_badge_image"
+        android:layout_alignRight="@id/action_menu_badge_image"
 
         android:layout_marginRight="0dp"
         android:layout_marginTop="-5dp"
@@ -34,7 +34,8 @@
         android:paddingRight="0dp"
         android:paddingLeft="0dp"
 
-        android:text="99"
+        android:text=""
+        android:textStyle="bold"
         android:minWidth="19sp"
         android:textSize="9sp"
         android:background="@drawable/action_menu_badge_roundedsquare"

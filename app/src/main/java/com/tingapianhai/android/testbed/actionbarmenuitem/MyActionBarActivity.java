@@ -23,7 +23,7 @@ public class MyActionBarActivity extends AppCompatActivity {
     Context con;//not a good way to do this
     private ImageView badgeImageView;
     private TextView badgeTextView;
-    private int badgeNumber = 0;
+    private int badgeNumber = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +69,11 @@ public class MyActionBarActivity extends AppCompatActivity {
         if(badgeNumber>99){
             badgeTextView.setText("99+");//if the badge-number > 99, then use 99+ instead of 104,229,375 etc..
             badgeTextView.setBackgroundColor(Color.argb(255,255,0,0));//set badge-text view background to red-color
+            badgeTextView.setBackgroundResource(R.drawable.action_menu_badge_roundedsquare);
         } else if(badgeNumber>0){
             badgeTextView.setText(""+badgeNumber);
             badgeTextView.setBackgroundColor(Color.argb(255,255,0,0));//set badge-text view background to red-color
+            badgeTextView.setBackgroundResource(R.drawable.action_menu_badge_roundedsquare);
         } else{
             badgeTextView.setBackgroundColor(Color.argb(0,0,0,0));//set badge-text view background to transparent
         }

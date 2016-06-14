@@ -51,16 +51,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // ********************** //
-        /**
-         * refers to com.tingapianhai.android.testbed.myitemrecyclerview
-         */
         //startMyItemRecyclerViewListFragment();
 
-        /**
-         * refers to com.tingapianhai.android.testbed.myswiperefreshlayout
-         */
         //startMySwipeRefreshLayoutFragment();
-
         // ********************** //
     }
 

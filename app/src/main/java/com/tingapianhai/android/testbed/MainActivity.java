@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_openactivity) {
             /**
@@ -122,22 +122,25 @@ public class MainActivity extends AppCompatActivity
     }
 
     // ***** ***** ***** //
+
     /**
      * interface-method definition for MyItemRecyclerViewFragment, for Fragment Communication
+     *
      * @param item
      */
     @Override
     public void onMyItemRecyclerViewListFragmentInteraction(DummyContent.DummyItem item) {
         Toast.makeText(this, "" + item.id + " is clicked", Toast.LENGTH_SHORT).show();
     }
-    public void startMyItemRecyclerViewListFragment(){
+
+    public void startMyItemRecyclerViewListFragment() {
         Fragment fragment = new MyItemRecyclerViewFragment();
         FragmentManager fragmentManager = this.getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.layout_fragment, fragment).commit();
     }
 
     // ***** ***** ***** //
-    public void startMySwipeRefreshLayoutFragment(){
+    public void startMySwipeRefreshLayoutFragment() {
         Fragment fragment = new MySwipeRefreshLayoutFragment();
         FragmentManager fragmentManager = this.getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.layout_fragment, fragment).commit();

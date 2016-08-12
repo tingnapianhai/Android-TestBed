@@ -22,6 +22,7 @@ import com.tingapianhai.android.testbed.myitemrecyclerview.DummyContent;
 import com.tingapianhai.android.testbed.myitemrecyclerview.MyItemRecyclerViewFragment;
 import com.tingapianhai.android.testbed.myswiperefreshlayout.MySwipeRefreshLayoutFragment;
 
+//lets test :) to see two different git jumping...
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener {
 

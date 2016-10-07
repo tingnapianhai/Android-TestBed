@@ -21,6 +21,7 @@ import com.tingapianhai.android.testbed.actionbarmenuitem.MyActionBarActivity;
 import com.tingapianhai.android.testbed.myitemrecyclerview.DummyContent;
 import com.tingapianhai.android.testbed.myitemrecyclerview.MyItemRecyclerViewFragment;
 import com.tingapianhai.android.testbed.myswiperefreshlayout.MySwipeRefreshLayoutFragment;
+import com.tingapianhai.android.testbed.regex.RegexActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MyItemRecyclerViewFragment.OnMyItemRecyclerViewListFragmentInteractionListener {
@@ -82,16 +83,23 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (id == R.id.action_openactivity) {
-            /**
-             * start MyActionBarActivity
-             */
-            this.startActivity(new Intent(this, MyActionBarActivity.class));
-            return true;
+        switch (id) {
+            case R.id.action_settings: {
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            case R.id.action_openactivity: {
+                //start MyActionBarActivity
+                this.startActivity(new Intent(this, MyActionBarActivity.class));
+                return true;
+            }
+            case R.id.action_open_regexactivity: {
+                //start RegexActivity
+                this.startActivity(new Intent(this, RegexActivity.class));
+                return true;
+            }
         }
+
 
         return super.onOptionsItemSelected(item);
     }

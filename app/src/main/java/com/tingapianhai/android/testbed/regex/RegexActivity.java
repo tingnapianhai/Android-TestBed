@@ -36,14 +36,17 @@ public class RegexActivity extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable s) {
+            validateTextByRegex(s.toString());
             validateText(s.toString());
         }
     };
 
-    private void validateText(String text){
+    private void validateTextByRegex(String text){
         if(text == null || text.length() == 0) {
             return;
         }
+
+        String lastChar = text.substring(text.length()-1);
 
 //        a-ö üéáãé
 //        0-9
@@ -57,12 +60,31 @@ public class RegexActivity extends AppCompatActivity {
         String validChars = "[a-z<E5><E4><F6>A-Z<C5><C4><D6><FC><E9><E1><E3><E9><DC><C9><C1>\u00e5\u00e4\u00f6\u00C5\u00c4\u0026\u0000/\\d\\s\"\\[\\]\\-\\\\:.%,@_/{}#()!?<B4>+]*";
 
         //String validStr1 = "[0-9a-öüéáãé “ [ ] - \\ : % , @ _ / { } # ( ) ! ? ´ +]";
-        String validStr = "[a-zà-å0-9\u00f6\u00fc\uu00e9\u000b\t\n\r\f“ [ ] - \\ : % , @ _ / { } # ( ) ! ? ´ +]";
+        String validStr = "[a-zà-å0-9\u00f6\u00fc\uu00e9\u000b\t\n\r\f\u005c\u0022[ ]-:%,@_/{}#()!?´+]";
         Pattern pattern = Pattern.compile(validStr, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(text.substring(text.length()-1));
+        Matcher matcher = pattern.matcher(lastChar);
         boolean rs = matcher.find();
 
         Log.v("regex", "regex:" + rs);
+    }
+
+    private void validateText(String text) {
+        if(text == null || text.length() == 0) {
+            return;
+        }
+
+        String lastChar = text.substring(text.length()-1);
+
+        String validChars =
+                "abcdefghijklmnopqrstuvwxyzäåö" +
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÅÖ"
+                ;
+
+        if( lastChar.equals("\uu0040")) {
+            Log.v("regex", "regex @:" + "\uu0040");
+        } else if(lastChar.equals("\uu0023")) {
+            Log.v("regex", "regex:" + "\uu0023");
+        }
 
     }
 

@@ -21,6 +21,7 @@ import com.tingapianhai.android.testbed.actionbarmenuitem.MyActionBarActivity;
 import com.tingapianhai.android.testbed.myitemrecyclerview.DummyContent;
 import com.tingapianhai.android.testbed.myitemrecyclerview.MyItemRecyclerViewFragment;
 import com.tingapianhai.android.testbed.myswiperefreshlayout.MySwipeRefreshLayoutFragment;
+import com.tingapianhai.android.testbed.picasso.PicassoActivity;
 import com.tingapianhai.android.testbed.regex.RegexActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -96,6 +97,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.action_open_regexactivity: {
                 //start RegexActivity
                 this.startActivity(new Intent(this, RegexActivity.class));
+                return true;
+            }
+            case R.id.action_open_picassoactivity: {
+                this.startActivity(new Intent(this, PicassoActivity.class));
                 return true;
             }
         }

@@ -16,5 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minLines="1"/>
+    
+    <TextView
+        android:id="@+id/textview_regex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_regex"
+        android:minLines="1"/>
 
 </RelativeLayout>

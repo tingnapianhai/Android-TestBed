@@ -1,6 +1,7 @@
 package com.tingapianhai.android.testbed.myswiperefreshlayout;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
@@ -31,17 +32,16 @@ public class MySwipeRefreshLayoutFragment extends Fragment{
     private SwipeRefreshLayout.OnRefreshListener onRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            //TODO doing stuff when swipe-refresh
             Log.v(TAG,"SwipeRefresh start");
-            try {
-                Thread.sleep(2000);//Simulate the refresh-action
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
-            ///after swipe-refresh, setRefreshing to false
-            refreshLayout.setRefreshing(false);
-            Log.v(TAG,"SwipeRefresh end");
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    refreshLayout.setRefreshing(false);
+                    Log.v(TAG,"SwipeRefresh end");
+                }
+            }, 2000);
         }
     };
 

@@ -6,4 +6,16 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_openactivity"
+        android:orderInCategory="100"
+        android:title="MyActionBarActivity"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_regexactivity"
+        android:orderInCategory="100"
+        android:title="RegexActivity"
+        app:showAsAction="never" />
 </menu>
